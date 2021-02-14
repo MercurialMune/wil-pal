@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content  %}
+<div class="mt-5 mb-5 pb-5 pt-5"><p class="p-1"></p></div>
+
+<!-- Default form contact -->
+<br>
+{% include 'messages.html' %}
+
+<form class="text-center  p-3 mt-5 w-75 mx-auto h-50  my-auto " method="post" >
+	{%csrf_token%}
+
+    <p class="h4 mb-4">Contact us</p>
+
+    <!-- Name -->
+	<div class="form-row">
+	<div class="input-group col-6">
+    <input type="text" id="defaultContactFormName" class="form-control mb-4" placeholder="Name" name="contact_name">
+    </div>
+    <!-- Email -->
+	<div class="input-group col-6">
+    <input type="email" id="defaultContactFormEmail" class="form-control mb-4 " placeholder="E-mail" name="contact_email">
+	</div>
+	</div>
+
+
+    <!-- Message -->
+    <div class="form-group">
+        <textarea class="form-control rounded" id="exampleFormControlTextarea2" rows="5" placeholder="Message" name="content"></textarea>
+    </div>
+
+
+
+    <!-- Send button -->
+    <button class="btn btn-info btn-block  ml-0 my-0" type="submit">Send</button>
+
+</form>
+<!-- Default form contact -->
+
+
+{% endblock %}
